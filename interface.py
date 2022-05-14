@@ -4,20 +4,8 @@ from tkinter import messagebox
 from tkinter.ttk import Treeview
 
 
-
-"""def Inserir():
-    if entry_nome.get() == '' or entry_idade.get() == '' or entry_fone.get() == '':
-        messagebox.showwarning(title='Ops', message='Por favor, verifique se os campos foram preenchidos.')
-    else:
-        with open('dados_usuarios.txt', 'a', encoding='UTF-8') as file:
-            file.write(f'{" ".join(entry_nome.get().split())} {" ".join(entry_idade.get().split())} {" ".join(entry_fone.get().split()) }\n')
-
-        entry_nome.delete(0, END)
-        entry_idade.delete(0, END)
-        entry_fone.delete(0, END)
-        entry_nome.focus()"""
-
 def inserir():
+    # adiciona dados no treeview
     tree.insert('', END, values=(entry_nome.get(), entry_idade.get(), entry_fone.get()))
     
     entry_nome.delete(0, END)
@@ -37,12 +25,12 @@ def obter():
 
 
 if exists('dados_usuarios.txt') == False:
+    """Reponsável por criar o arquivo txd"""
     open('dados_usuarios.txt', 'w').close()
 else:
     pass
 
 
-#info = [['Brenna dos santos marthins', '18', '82729282732'], ['Julio palmeiras do pão', '10', '8252318222'], ['Milk jusbineudo mello', '21', '82729282732']]
 
 # programa principal
 root = Tk()
@@ -67,8 +55,6 @@ Button(root, text='Obter', bg='#255385', relief='raised', border=1, command=obte
 # Treeview
 tree = Treeview(labelFrame_cadastrados, columns=('name_column', 'age_column', 'phone_column'),show='headings')
 
-
-
 # configurando as colunas
 tree.column('name_column', width=160, )
 tree.column('age_column', width=40)
@@ -77,8 +63,6 @@ tree.column('phone_column', width=100)
 tree.heading('name_column', text='Nome', anchor=CENTER )
 tree.heading('age_column', text='Idade', anchor=CENTER )
 tree.heading('phone_column', text='Telefone', anchor=CENTER)
-
-
 
 
 # posicionando os widgets
