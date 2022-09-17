@@ -1,7 +1,9 @@
 # Basic, resizable Tkinter window using place() :D
  
 _Before_
-![new img](images\img1.png)
+
+![new img](https://i.imgur.com/Zn1jJov.png)
 
 _later_
-![new img](images\img2.png)
+
+![new img](https://i.imgur.com/pUEYBUO.png)
