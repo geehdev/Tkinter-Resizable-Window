@@ -1,2 +1,2 @@
-# Treino Tkinter
+# Tkinter Resizable Window
  
